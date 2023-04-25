@@ -28,8 +28,10 @@ hearts.forEach(heart => {
 
     if (like === EMPTY_HEART) {
       heart.textContent = FULL_HEART
+      heart.classList.add("activated-heart")
     } else if (like === FULL_HEART) {
       heart.textContent = EMPTY_HEART
+      heart.classList.remove("activated-heart")
     }
   })
 })
