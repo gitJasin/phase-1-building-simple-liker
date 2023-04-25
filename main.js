@@ -1,6 +1,7 @@
 /*
-[] - Add the .hidden class to the error modal in the HTML so it does not appear when the page first loads
-        - When a user clicks on an empty heart: Invoke mimicServerCall to simulate making a server request
+[X] - Add the .hidden class to the error modal in the HTML so it does not appear when the page first loads
+[] - When a user clicks on an empty heart: 
+        - Invoke mimicServerCall to simulate making a server request
 [] - When the "server" returns a failure status:
         - Respond to the error using a .catch(() => {}) block after your .then(() => {}) block.
         - Display the error modal by removing the .hidden class
@@ -19,6 +20,20 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const hearts = document.querySelectorAll(".like-glyph")
+
+hearts.forEach(heart => {
+  heart.addEventListener("click", () => {
+    const like = heart.textContent
+
+    if (like === EMPTY_HEART) {
+      heart.textContent = FULL_HEART
+    } else if (like === FULL_HEART) {
+      heart.textContent = EMPTY_HEART
+    }
+  })
+})
+
 
 
 
