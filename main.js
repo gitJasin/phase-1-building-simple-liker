@@ -1,6 +1,6 @@
 /*
 [X] - Add the .hidden class to the error modal in the HTML so it does not appear when the page first loads
-[] - When a user clicks on an empty heart: 
+[X] - When a user clicks on an empty heart: 
         - Invoke mimicServerCall to simulate making a server request
 [] - When the "server" returns a failure status:
         - Respond to the error using a .catch(() => {}) block after your .then(() => {}) block.
@@ -8,9 +8,9 @@
         - Display the server error message in the modal
         - Use setTimeout to hide the modal after 3 seconds (add the .hidden class)
 [] - When the "server" returns a success status:
-        - Change the heart to a full heart
-        - Add the .activated-heart class to make the heart appear red
-[] - When a user clicks on a full heart:
+        [X] - Change the heart to a full heart
+        [] - Add the .activated-heart class to make the heart appear red
+[X] - When a user clicks on a full heart:
         - Change the heart back to an empty heart
         - Remove the .activated-heart class
 */
@@ -27,6 +27,7 @@ hearts.forEach(heart => {
     const like = heart.textContent
 
     if (like === EMPTY_HEART) {
+      mimicServerCall()
       heart.textContent = FULL_HEART
       heart.classList.add("activated-heart")
     } else if (like === FULL_HEART) {
